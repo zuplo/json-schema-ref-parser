@@ -1,4 +1,9 @@
-import { JSONSchema4, JSONSchema4Type, JSONSchema6, JSONSchema6Type } from "json-schema";
+import {
+  JSONSchema4,
+  JSONSchema4Type,
+  JSONSchema6,
+  JSONSchema6Type,
+} from "json-schema";
 
 export = $RefParser;
 
@@ -8,7 +13,6 @@ export = $RefParser;
  * See https://apitools.dev/json-schema-ref-parser/docs/ref-parser.html
  */
 declare class $RefParser {
-
   /**
    * The `schema` property is the parsed/bundled/dereferenced JSON Schema object. This is the same value that is passed to the callback function (or Promise) when calling the parse, bundle, or dereference methods.
    *
@@ -36,12 +40,33 @@ declare class $RefParser {
    * @param options (optional)
    * @param callback (optional) A callback that will receive the dereferenced schema object
    */
-  public dereference(schema: string | $RefParser.JSONSchema, callback: $RefParser.SchemaCallback): void;
-  public dereference(schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public dereference(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public dereference(schema: string | $RefParser.JSONSchema): Promise<$RefParser.JSONSchema>;
-  public dereference(schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
-  public dereference(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
+  public dereference(
+    schema: string | $RefParser.JSONSchema,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public dereference(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public dereference(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public dereference(
+    schema: string | $RefParser.JSONSchema
+  ): Promise<$RefParser.JSONSchema>;
+  public dereference(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
+  public dereference(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
 
   /**
    * Dereferences all `$ref` pointers in the JSON Schema, replacing each reference with its resolved value. This results in a schema object that does not contain any `$ref` pointers. Instead, it's a normal JavaScript object tree that can easily be crawled and used just like any other JavaScript object. This is great for programmatic usage, especially when using tools that don't understand JSON references.
@@ -54,12 +79,33 @@ declare class $RefParser {
    * @param options (optional)
    * @param callback (optional) A callback that will receive the dereferenced schema object
    */
-  public static dereference(schema: string | $RefParser.JSONSchema, callback: $RefParser.SchemaCallback): void;
-  public static dereference(schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public static dereference(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public static dereference(schema: string | $RefParser.JSONSchema): Promise<$RefParser.JSONSchema>;
-  public static dereference(schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
-  public static dereference(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
+  public static dereference(
+    schema: string | $RefParser.JSONSchema,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static dereference(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static dereference(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static dereference(
+    schema: string | $RefParser.JSONSchema
+  ): Promise<$RefParser.JSONSchema>;
+  public static dereference(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
+  public static dereference(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
 
   /**
    * Bundles all referenced files/URLs into a single schema that only has internal `$ref` pointers. This lets you split-up your schema however you want while you're building it, but easily combine all those files together when it's time to package or distribute the schema to other people. The resulting schema size will be small, since it will still contain internal JSON references rather than being fully-dereferenced.
@@ -72,12 +118,33 @@ declare class $RefParser {
    * @param options (optional)
    * @param callback (optional) A callback that will receive the bundled schema object
    */
-  public bundle(schema: string | $RefParser.JSONSchema, callback: $RefParser.SchemaCallback): void;
-  public bundle(schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public bundle(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public bundle(schema: string | $RefParser.JSONSchema): Promise<$RefParser.JSONSchema>;
-  public bundle(schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
-  public bundle(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
+  public bundle(
+    schema: string | $RefParser.JSONSchema,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public bundle(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public bundle(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public bundle(
+    schema: string | $RefParser.JSONSchema
+  ): Promise<$RefParser.JSONSchema>;
+  public bundle(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
+  public bundle(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
 
   /**
    * Bundles all referenced files/URLs into a single schema that only has internal `$ref` pointers. This lets you split-up your schema however you want while you're building it, but easily combine all those files together when it's time to package or distribute the schema to other people. The resulting schema size will be small, since it will still contain internal JSON references rather than being fully-dereferenced.
@@ -90,12 +157,33 @@ declare class $RefParser {
    * @param options (optional)
    * @param callback (optional) A callback that will receive the bundled schema object
    */
-  public static bundle(schema: string | $RefParser.JSONSchema, callback: $RefParser.SchemaCallback): void;
-  public static bundle(schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public static bundle(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public static bundle(schema: string | $RefParser.JSONSchema): Promise<$RefParser.JSONSchema>;
-  public static bundle(schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
-  public static bundle(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
+  public static bundle(
+    schema: string | $RefParser.JSONSchema,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static bundle(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static bundle(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static bundle(
+    schema: string | $RefParser.JSONSchema
+  ): Promise<$RefParser.JSONSchema>;
+  public static bundle(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
+  public static bundle(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
 
   /**
    * *This method is used internally by other methods, such as `bundle` and `dereference`. You probably won't need to call this method yourself.*
@@ -108,12 +196,33 @@ declare class $RefParser {
    * @param options (optional)
    * @param callback (optional) A callback that will receive the parsed schema object, or an error
    */
-  public parse(schema: string | $RefParser.JSONSchema, callback: $RefParser.SchemaCallback): void;
-  public parse(schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public parse(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public parse(schema: string | $RefParser.JSONSchema): Promise<$RefParser.JSONSchema>;
-  public parse(schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
-  public parse(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
+  public parse(
+    schema: string | $RefParser.JSONSchema,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public parse(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public parse(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public parse(
+    schema: string | $RefParser.JSONSchema
+  ): Promise<$RefParser.JSONSchema>;
+  public parse(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
+  public parse(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
 
   /**
    * *This method is used internally by other methods, such as `bundle` and `dereference`. You probably won't need to call this method yourself.*
@@ -126,12 +235,33 @@ declare class $RefParser {
    * @param options (optional)
    * @param callback (optional) A callback that will receive the parsed schema object, or an error
    */
-  public static parse(schema: string | $RefParser.JSONSchema, callback: $RefParser.SchemaCallback): void;
-  public static parse(schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public static parse(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.SchemaCallback): void;
-  public static parse(schema: string | $RefParser.JSONSchema): Promise<$RefParser.JSONSchema>;
-  public static parse(schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
-  public static parse(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.JSONSchema>;
+  public static parse(
+    schema: string | $RefParser.JSONSchema,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static parse(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static parse(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.SchemaCallback
+  ): void;
+  public static parse(
+    schema: string | $RefParser.JSONSchema
+  ): Promise<$RefParser.JSONSchema>;
+  public static parse(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
+  public static parse(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.JSONSchema>;
 
   /**
    * *This method is used internally by other methods, such as `bundle` and `dereference`. You probably won't need to call this method yourself.*
@@ -144,12 +274,33 @@ declare class $RefParser {
    * @param options (optional)
    * @param callback (optional) A callback that will receive a `$Refs` object
    */
-  public resolve(schema: string | $RefParser.JSONSchema, callback: $RefParser.$RefsCallback): void;
-  public resolve(schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.$RefsCallback): void;
-  public resolve(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.$RefsCallback): void;
-  public resolve(schema: string | $RefParser.JSONSchema): Promise<$RefParser.$Refs>;
-  public resolve(schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.$Refs>;
-  public resolve(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.$Refs>;
+  public resolve(
+    schema: string | $RefParser.JSONSchema,
+    callback: $RefParser.$RefsCallback
+  ): void;
+  public resolve(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.$RefsCallback
+  ): void;
+  public resolve(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.$RefsCallback
+  ): void;
+  public resolve(
+    schema: string | $RefParser.JSONSchema
+  ): Promise<$RefParser.$Refs>;
+  public resolve(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.$Refs>;
+  public resolve(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.$Refs>;
 
   /**
    * *This method is used internally by other methods, such as `bundle` and `dereference`. You probably won't need to call this method yourself.*
@@ -162,18 +313,40 @@ declare class $RefParser {
    * @param options (optional)
    * @param callback (optional) A callback that will receive a `$Refs` object
    */
-  public static resolve(schema: string | $RefParser.JSONSchema, callback: $RefParser.$RefsCallback): void;
-  public static resolve(schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.$RefsCallback): void;
-  public static resolve(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options, callback: $RefParser.$RefsCallback): void;
-  public static resolve(schema: string | $RefParser.JSONSchema): Promise<$RefParser.$Refs>;
-  public static resolve(schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.$Refs>;
-  public static resolve(baseUrl: string, schema: string | $RefParser.JSONSchema, options: $RefParser.Options): Promise<$RefParser.$Refs>;
+  public static resolve(
+    schema: string | $RefParser.JSONSchema,
+    callback: $RefParser.$RefsCallback
+  ): void;
+  public static resolve(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.$RefsCallback
+  ): void;
+  public static resolve(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options,
+    callback: $RefParser.$RefsCallback
+  ): void;
+  public static resolve(
+    schema: string | $RefParser.JSONSchema
+  ): Promise<$RefParser.$Refs>;
+  public static resolve(
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.$Refs>;
+  public static resolve(
+    baseUrl: string,
+    schema: string | $RefParser.JSONSchema,
+    options: $RefParser.Options
+  ): Promise<$RefParser.$Refs>;
 }
 
 // eslint-disable-next-line no-redeclare
 declare namespace $RefParser {
+  type RefSymbol = { [ORIGINAL_REF_SYMBOL]?: string };
 
-  export type JSONSchema = JSONSchema4 | JSONSchema6;
+  export type JSONSchema = (JSONSchema4 | JSONSchema6) & RefSymbol;
   export type SchemaCallback = (err: Error | null, schema?: JSONSchema) => any;
   export type $RefsCallback = (err: Error | null, $refs?: $Refs) => any;
 
@@ -181,7 +354,6 @@ declare namespace $RefParser {
    * See https://apitools.dev/json-schema-ref-parser/docs/options.html
    */
   export interface Options {
-
     /**
      * The `parse` options determine how different types of files will be parsed.
      *
@@ -200,7 +372,6 @@ declare namespace $RefParser {
      * JSON Schema `$Ref` Parser comes with built-in support for HTTP and HTTPS, as well as support for local files (when running in Node.js). You can configure or disable either of these built-in resolvers. You can also add your own custom resolvers if you want.
      */
     resolve?: {
-
       /**
        * Determines whether external $ref pointers will be resolved. If this option is disabled, then external `$ref` pointers will simply be ignored.
        */
@@ -222,7 +393,6 @@ declare namespace $RefParser {
      * The `dereference` options control how JSON Schema `$Ref` Parser will dereference `$ref` pointers within the JSON schema.
      */
     dereference?: {
-
       /**
        * Determines whether circular `$ref` pointers are handled.
        *
@@ -235,7 +405,6 @@ declare namespace $RefParser {
   }
 
   export interface HTTPResolverOptions extends Partial<ResolverOptions> {
-
     /**
      * You can specify any HTTP headers that should be sent when downloading files. For example, some servers may require you to set the `Accept` or `Referrer` header.
      */
@@ -263,7 +432,6 @@ declare namespace $RefParser {
    * See https://apitools.dev/json-schema-ref-parser/docs/plugins/resolvers.html
    */
   export interface ResolverOptions {
-
     /**
      * All resolvers have an order property, even the built-in resolvers. If you don't specify an order property, then your resolver will run last. Specifying `order: 1`, like we did in this example, will make your resolver run first. Or you can squeeze your resolver in-between some of the built-in resolvers. For example, `order: 101` would make it run after the file resolver, but before the HTTP resolver. You can see the order of all the built-in resolvers by looking at their source code.
      *
@@ -274,7 +442,12 @@ declare namespace $RefParser {
     /**
      * The `canRead` property tells JSON Schema `$Ref` Parser what kind of files your resolver can read. In this example, we've simply specified a regular expression that matches "mogodb://" URLs, but we could have used a simple boolean, or even a function with custom logic to determine which files to resolve. Here are examples of each approach:
      */
-    canRead: boolean | RegExp | string | string[] | ((file: FileInfo) => boolean);
+    canRead:
+      | boolean
+      | RegExp
+      | string
+      | string[]
+      | ((file: FileInfo) => boolean);
 
     /**
      * This is where the real work of a resolver happens. The `read` method accepts the same file info object as the `canRead` function, but rather than returning a boolean value, the `read` method should return the contents of the file. The file contents should be returned in as raw a form as possible, such as a string or a byte array. Any further parsing or processing should be done by parsers.
@@ -288,7 +461,6 @@ declare namespace $RefParser {
   }
 
   export interface ParserOptions {
-
     /**
      * Parsers run in a specific order, relative to other parsers. For example, a parser with `order: 5` will run before a parser with `order: 10`. If a parser is unable to successfully parse a file, then the next parser is tried, until one succeeds or they all fail.
      *
@@ -308,7 +480,12 @@ declare namespace $RefParser {
      *
      * A regular expression can be used to match files by their full path. A string (or array of strings) can be used to match files by their file extension. Or a function can be used to perform more complex matching logic. See the custom parser docs for details.
      */
-    canParse?: boolean | RegExp | string | string[] | ((file: FileInfo) => boolean);
+    canParse?:
+      | boolean
+      | RegExp
+      | string
+      | string[]
+      | ((file: FileInfo) => boolean);
 
     /**
      * This is where the real work of a parser happens. The `parse` method accepts the same file info object as the `canParse` function, but rather than returning a boolean value, the `parse` method should return a JavaScript representation of the file contents.  For our CSV parser, that is a two-dimensional array of lines and values.  For your parser, it might be an object, a string, a custom class, or anything else.
@@ -329,7 +506,6 @@ declare namespace $RefParser {
    * See https://apitools.dev/json-schema-ref-parser/docs/plugins/file-info-object.html
    */
   export interface FileInfo {
-
     /**
      * The full URL of the file. This could be any type of URL, including "http://", "https://", "file://", "ftp://", "mongodb://", or even a local filesystem path (when running in Node.js).
      */
@@ -368,7 +544,7 @@ declare namespace $RefParser {
      *
      * @param types (optional) Optionally only return certain types of paths ("file", "http", etc.)
      */
-    public paths(...types: string[]): string[]
+    public paths(...types: string[]): string[];
 
     /**
      * Returns a map of paths/URLs and their correspond values.
@@ -377,7 +553,7 @@ declare namespace $RefParser {
      *
      * @param types (optional) Optionally only return values from certain locations ("file", "http", etc.)
      */
-    public values(...types: string[]): { [url: string]: $RefParser.JSONSchema }
+    public values(...types: string[]): { [url: string]: $RefParser.JSONSchema };
 
     /**
      * Returns `true` if the given path exists in the schema; otherwise, returns `false`
@@ -386,7 +562,7 @@ declare namespace $RefParser {
      *
      * @param $ref The JSON Reference path, optionally with a JSON Pointer in the hash
      */
-    public exists($ref: string): boolean
+    public exists($ref: string): boolean;
 
     /**
      * Gets the value at the given path in the schema. Throws an error if the path does not exist.
@@ -395,7 +571,7 @@ declare namespace $RefParser {
      *
      * @param $ref The JSON Reference path, optionally with a JSON Pointer in the hash
      */
-    public get($ref: string): JSONSchema4Type | JSONSchema6Type
+    public get($ref: string): JSONSchema4Type | JSONSchema6Type;
 
     /**
      * Sets the value at the given path in the schema. If the property, or any of its parents, don't exist, they will be created.
@@ -403,10 +579,17 @@ declare namespace $RefParser {
      * @param $ref The JSON Reference path, optionally with a JSON Pointer in the hash
      * @param value The value to assign. Can be anything (object, string, number, etc.)
      */
-    public set($ref: string, value: JSONSchema4Type | JSONSchema6Type): void
+    public set($ref: string, value: JSONSchema4Type | JSONSchema6Type): void;
   }
 
-  export type JSONParserErrorType = "EUNKNOWN" | "EPARSER" | "EUNMATCHEDPARSER" | "ERESOLVER" | "EUNMATCHEDRESOLVER" | "EMISSINGPOINTER" | "EINVALIDPOINTER";
+  export type JSONParserErrorType =
+    | "EUNKNOWN"
+    | "EPARSER"
+    | "EUNMATCHEDPARSER"
+    | "ERESOLVER"
+    | "EUNMATCHEDRESOLVER"
+    | "EMISSINGPOINTER"
+    | "EINVALIDPOINTER";
 
   export class JSONParserError extends Error {
     public readonly name: string;
@@ -423,7 +606,15 @@ declare namespace $RefParser {
      *
      * See https://github.com/APIDevTools/json-schema-ref-parser/blob/master/docs/ref-parser.md#errors
      */
-    public readonly errors: Array<$RefParser.JSONParserError | $RefParser.InvalidPointerError | $RefParser.ResolverError | $RefParser.ParserError | $RefParser.MissingPointerError | $RefParser.UnmatchedParserError | $RefParser.UnmatchedResolverError>;
+    public readonly errors: Array<
+      | $RefParser.JSONParserError
+      | $RefParser.InvalidPointerError
+      | $RefParser.ResolverError
+      | $RefParser.ParserError
+      | $RefParser.MissingPointerError
+      | $RefParser.UnmatchedParserError
+      | $RefParser.UnmatchedResolverError
+    >;
 
     /**
      * The fields property is a `$RefParser` instance
@@ -444,23 +635,24 @@ declare namespace $RefParser {
   }
   export class UnmatchedParserError extends JSONParserError {
     public readonly name = "UnmatchedParserError";
-    public readonly code ="EUNMATCHEDPARSER";
+    public readonly code = "EUNMATCHEDPARSER";
   }
   export class ResolverError extends JSONParserError {
     public readonly name = "ResolverError";
-    public readonly code ="ERESOLVER";
+    public readonly code = "ERESOLVER";
     public readonly ioErrorCode?: string;
   }
   export class UnmatchedResolverError extends JSONParserError {
     public readonly name = "UnmatchedResolverError";
-    public readonly code ="EUNMATCHEDRESOLVER";
+    public readonly code = "EUNMATCHEDRESOLVER";
   }
   export class MissingPointerError extends JSONParserError {
     public readonly name = "MissingPointerError";
-    public readonly code ="EMISSINGPOINTER";
+    public readonly code = "EMISSINGPOINTER";
   }
   export class InvalidPointerError extends JSONParserError {
     public readonly name = "InvalidPointerError";
-    public readonly code ="EINVALIDPOINTER";
+    public readonly code = "EINVALIDPOINTER";
   }
+  export const ORIGINAL_REF_SYMBOL: unique symbol;
 }
